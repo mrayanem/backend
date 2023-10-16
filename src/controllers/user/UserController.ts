@@ -69,7 +69,7 @@ class UserController {
         try {
             const user = await updateUserService.execute(id, { name, email, password, cpf, cep, telefone })
 
-            return res.json(user)
+            return res.json(user).status(200)
         } catch (error) {
             return res.status(400).send()
         }
